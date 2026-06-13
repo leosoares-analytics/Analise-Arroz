@@ -4,7 +4,7 @@
 
 Ingestão
 
-- [ ] Definir Stacks para o pipeline
+- [x] Definir Stacks para o pipeline
 - [ ] Conexão API Yahoo Finance
 - [ ] Conexão API Nasdaq
 - [ ] Conexão API USDA
