@@ -2,6 +2,8 @@
 
 ## To-do List
 
+Ingestão
+
 - [ ] Definir Stacks para o pipeline
 - [ ] Conexão API Yahoo Finance
 - [ ] Conexão API Nasdaq
@@ -12,6 +14,19 @@
 - [ ] Conexão API EMATER
 - [ ] Conexão API INMET
 - [ ] Conexão API Copernicus
+      
+  Tratamento
+
+- [ ] dbt quality
+
+Machine Learning
+
+- [ ] Previsão de Safra
+- [ ] Previsão de Preços
+
+Vizualisação de dados
+
+- [ ] Vizualisação de dados
 
 ## Fontes de dados
 
@@ -68,7 +83,6 @@
 
 <img width="1408" height="768" alt="Image" src="https://github.com/user-attachments/assets/3e545abf-5a25-48c3-a071-7143b7d114a5" />
 
-## Pipeline de dados
 
 
 
