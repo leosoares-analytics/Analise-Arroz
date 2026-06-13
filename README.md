@@ -8,7 +8,7 @@ Ingestão
 - [ ] Conexão API Yahoo Finance
 - [ ] Conexão API Nasdaq
 - [ ] Conexão API USDA
-- [ ] Conexão API CEPEA
+- [x] Conexão API CEPEA
 - [ ] Conexão API Banco Central
 - [ ] Conexão API IRGA
 - [ ] Conexão API EMATER
