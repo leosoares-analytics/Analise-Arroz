@@ -27,6 +27,26 @@ Vizualisação de dados
 
 ## Fontes de dados
 
+### CEPEA
+
+Dados do valor historico do arroz em casca
+
+> [!IMPORTANT]
+> Esse caso não é uma API, mas sim um arquivo Excel que deve ser baixado e atualizado pelo site https://www.cepea.org.br/br/indicador/arroz.aspx clicando em serie ded preços.
+
+### API Yahoo Finance
+
+Dados Coletadps
+'''
+- USD/BRL : razão dolar / real
+- ZR=F : representa os contratos futuros de Rough Rice negociados na CBOT/CME.
+- DBA : exposição a futuros agrícolas como milho, soja, trigo, açúcar, café, algodão e pecuária.
+- MOO : investe em empresas ligadas ao agronegócio, como fertilizantes, sementes, máquinas agrícolas e processamento agrícola.
+'''
+
+<!--
+## Fontes de dados
+
 ### Internacional: Bolsa de Chicago (CBOT) e Panorama Geral
 
 #### API do Yahoo Finance (via biblioteca yfinance em Python):
@@ -75,6 +95,8 @@ Vizualisação de dados
 #### Copernicus (Open Access Hub) ou Google Earth Engine
 
 - Imagens de satélite (Sentinel/Landsat) para calcular índices de vegetação (como o NDVI) sobre as áreas de lavoura de Palmares do Sul. Isso permite monitorar a saúde do arroz em tempo real e prever produtividade antes da colheita terminar
+
+-->
 
 ## Pipeline de dados
 
