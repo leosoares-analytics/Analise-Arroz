@@ -2,16 +2,16 @@
 
 ## To-do List
 
-- [] Definir Stacks para o pipeline
-- [] Conexão API Yahoo Finance
-- [] Conexão API Nasdaq
-- [] Conexão API USDA
-- [] Conexão API CEPEA
-- [] Conexão API Banco Central
-- [] Conexão API IRGA
-- [] Conexão API EMATER
-- [] Conexão API INMET
-- [] Conexão API Copernicus
+- [ ] Definir Stacks para o pipeline
+- [ ] Conexão API Yahoo Finance
+- [ ] Conexão API Nasdaq
+- [ ] Conexão API USDA
+- [ ] Conexão API CEPEA
+- [ ] Conexão API Banco Central
+- [ ] Conexão API IRGA
+- [ ] Conexão API EMATER
+- [ ] Conexão API INMET
+- [ ] Conexão API Copernicus
 
 ## Fontes de dados
 
