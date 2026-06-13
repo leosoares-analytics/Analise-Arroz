@@ -60,22 +60,15 @@
 
 - Dados de estações meteorológicas automáticas próximas a Palmares do Sul (temperatura, precipitação acumulada)
 
-### Pipeline de dados
-
-[Fontes de Dados] (APIs/Scrapers) 
-       │
-       ▼ (Camada de Ingestão: DuckDB + Python)
-[Arquivos Locais / Data Lake Pocket] (Parquet / CSV)
-       │
-       ▼ (Camada de Transformação e Data Quality)
-[DuckDB + dbt Core] 
-       │
-       ▼ (Camada de Machine Learning & Analytics)
-[Python: Pandas / Scikit-Learn / XGBoost]
-       │
-       ▼ (Camada de Visualização)
-[Streamlit / Plotly] ou [Marimo Notebooks]
-
 #### Copernicus (Open Access Hub) ou Google Earth Engine
 
 - Imagens de satélite (Sentinel/Landsat) para calcular índices de vegetação (como o NDVI) sobre as áreas de lavoura de Palmares do Sul. Isso permite monitorar a saúde do arroz em tempo real e prever produtividade antes da colheita terminar
+
+## Pipeline de dados
+
+<img width="1408" height="768" alt="Image" src="https://github.com/user-attachments/assets/3e545abf-5a25-48c3-a071-7143b7d114a5" />
+
+## Pipeline de dados
+
+
+
