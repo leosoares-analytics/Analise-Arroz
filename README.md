@@ -2,26 +2,25 @@
 
 ## To-do List
 
-Ingestão
+### Ingestão
 
 - [x] Definir Stacks para o pipeline
-- [ ] Conexão API Yahoo Finance (USA/BRL , ETFs Agriculas , Indices de commodities) 
+- [x] Conexão API Yahoo Finance (USA/BRL , ETFs Agriculas , Indices de commodities) 
 - [x] Conexão API CEPEA --> Arquivo via Excel
 - [ ] Conexão API Banco Central ddo Brasil [BCB]
 - [ ] API IBGE
 - [ ] Conab
 
-      
-  Tratamento
+### Tratamento
 
 - [ ] dbt quality
 
-Machine Learning
+### Machine Learning
 
 - [ ] Previsão de Safra
 - [ ] Previsão de Preços
 
-Vizualisação de dados
+### Vizualisação de dados
 
 - [ ] Vizualisação de dados
 
