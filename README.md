@@ -5,15 +5,12 @@
 Ingestão
 
 - [x] Definir Stacks para o pipeline
-- [ ] Conexão API Yahoo Finance
-- [ ] Conexão API Nasdaq
-- [ ] Conexão API USDA
-- [x] Conexão API CEPEA
-- [ ] Conexão API Banco Central
-- [ ] Conexão API IRGA
-- [ ] Conexão API EMATER
-- [ ] Conexão API INMET
-- [ ] Conexão API Copernicus
+- [ ] Conexão API Yahoo Finance (USA/BRL , ETFs Agriculas , Indices de commodities) 
+- [x] Conexão API CEPEA --> Arquivo via Excel
+- [ ] Conexão API Banco Central ddo Brasil [BCB]
+- [ ] API IBGE
+- [ ] Conab
+
       
   Tratamento
 
