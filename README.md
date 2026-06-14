@@ -32,6 +32,7 @@ Dados do valor historico do arroz em casca
 
 > [!IMPORTANT]
 > Esse caso não é uma API, mas sim um arquivo Excel que deve ser baixado e atualizado pelo site https://www.cepea.org.br/br/indicador/arroz.aspx clicando em serie ded preços.
+> O arquivo deve ser salvo mudando o tipo de arquivo de .XLS para .XLSX
 
 ### API Yahoo Finance
 
