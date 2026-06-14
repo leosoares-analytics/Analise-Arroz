@@ -32,21 +32,24 @@
 
 1 - Abra o cmd
 
-'''
+```
 mkdir dados_arroz
 cd dados_arroz
 python -m venv venv
-'''
+```
 
 2 - Instalar Bibliotecas
 
-'''
+```
 pip install dbt-duckdb
-'''
+```
+
 3 - Incializar o projeto
-'''
+
+```
 dbt init meu_primeiro_projeto
-'''
+```
+
 4 - Como abrir a pasta .dbt para ver o profile.yml ??
 
 
