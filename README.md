@@ -2,6 +2,10 @@
 
 ## To-do List
 
+### Configuração básica
+
+- [ ] Criar ambiente para este projeto
+
 ### Ingestão
 
 - [x] Definir Stacks para o pipeline
