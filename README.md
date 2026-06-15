@@ -47,7 +47,8 @@ pip install dbt-duckdb
 3 - Incializar o projeto
 
 ```
-dbt init meu_primeiro_projeto
+cd dados_arroz
+dbt init dados_arroz
 ```
 
 4 - Como abrir a pasta .dbt para ver o profile.yml ??
