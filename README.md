@@ -23,6 +23,11 @@
 - [ ] Gap entre valor de mercado e coperativa
 - [ ] Noticias de contexto
 - [ ] KPIs relevantes
+- [x] Preço do dia
+- [ ] Média do valor do arroz
+- [ ] Forecasting
+- [ ] Desvio Padrão e Variância do Preço: Mede a instabilidade do mercado. Alta volatilidade exige mais cautela e monitoramento frequente; baixa volatilidade indica um mercado mais previsível
+- [ ] Análise de Quartis e Percentis (Preço Histórico): Descobrir em qual faixa o preço atual se encontra em relação ao histórico. Por exemplo: "O preço atual de R$ X está no percentil 90 dos últimos 3 anos". Se estiver no topo (percentil alto), costuma ser um excelente sinal de venda
 
 ## Escopo da analise
 
