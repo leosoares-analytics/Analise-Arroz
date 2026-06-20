@@ -24,6 +24,10 @@
 - [ ] Noticias de contexto
 - [ ] KPIs relevantes
 
+## Escopo da analise
+
+Dashboard simples que auxilie na visão macro (Valor do arroz, valor do dolar e diversos outras variaveis que impactam) para tomada de decisão do melhor momento para venda do arroz.
+
 ## Criação do Ambiente
 
 1 - Abra o cmd
