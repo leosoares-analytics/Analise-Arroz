@@ -48,11 +48,38 @@ pip install dbt-duckdb
 
 ```
 cd dados_arroz
-dbt init dados_arroz
+dbt init dbt_case_arroz --skip-profile-setup
 ```
 
 4 - Como abrir a pasta .dbt para ver o profile.yml ??
 
+```
+cd dbt_case_arroz
+New-Item profiles.yml
+```
+
+```
+cd models
+New-Item stg_preco_arroz.sql
+New-Item schema.yml
+```
+
+```
+cd ..
+dbt run --profiles-dir .
+```
+
+```
+dbt test --profiles-dir .
+```
+
+## Como rodar dbt após tudo feito
+
+```
+dbt clean
+dbt run --profiles-dir .
+dbt test --profiles-dir .
+```
 
 ## Fontes de dados
 
