@@ -10,24 +10,32 @@
 ### Ingestão
 
 - [x] Definir Stacks para o pipeline
-- [ ] Conexão API Yahoo Finance (USA/BRL , ETFs Agriculas , Indices de commodities) 
 - [x] Conexão API CEPEA --> Arquivo via Excel
-- [ ] Conexão API Banco Central ddo Brasil [BCB]
-- [ ] Webscaping coperativa
+- [x] DDados coperativa
 - [ ] NewsAPI para filtrar as noticias mais relevantes dos ultimos 30 dias em relação ao preço do arroz
-- [ ] Criar base dded dados "macro contexto" em relação anoticias de 2005 a maio de 2026 para anlise do preço do arroz
+- [ ] Corrigir Awesome API para puxar valores historicos
 
 ### Vizualisação de dados
 
 - [x] Graficos de historico e sazonalidade do preço do arroz
-- [ ] Gap entre valor de mercado e coperativa
+- [x] Gap entre valor de mercado e coperativa
 - [ ] Noticias de contexto
-- [ ] KPIs relevantes
+- [x] KPIs relevantes
 - [x] Preço do dia
-- [ ] Média do valor do arroz
-- [ ] Forecasting
-- [ ] Desvio Padrão e Variância do Preço: Mede a instabilidade do mercado. Alta volatilidade exige mais cautela e monitoramento frequente; baixa volatilidade indica um mercado mais previsível
-- [ ] Análise de Quartis e Percentis (Preço Histórico): Descobrir em qual faixa o preço atual se encontra em relação ao histórico. Por exemplo: "O preço atual de R$ X está no percentil 90 dos últimos 3 anos". Se estiver no topo (percentil alto), costuma ser um excelente sinal de venda
+- [x] Média do valor do arroz
+
+### Forecasting
+
+#### Ingestão de dados Forecasting
+
+- [x] Indicador CEPEA/ESALQ (Arroz em Casca)
+- [ ] Estoque de Passagem e Intenção de Plantio (CONAB)
+- [ ] Custos de Produção (Insumos)
+- [ ] Taxa de Câmbio (USD/BRL) --> Awesome API
+- [ ] Preço do Arroz na Bolsa de Chicago (CBOT)
+- [ ] Inflação (IPCA / IGP-M)
+- [ ] Anomalias de Temperatura e Precipitação (Chuvas)
+- [ ] Eventos Climáticos Globais (El Niño / La Niña) (como o ONI - Ocean Niño Index)
 
 ## Escopo da analise
 
@@ -118,5 +126,44 @@ Dados Coletados
 <img width="1408" height="768" alt="Image" src="https://github.com/user-attachments/assets/3e545abf-5a25-48c3-a071-7143b7d114a5" />
 
 
+## Forecasting
 
+Para alimentar modelos mais avançados que o Prophet tradicional (como o SARIMAX, XGBoost ou o Skforecast), você precisará criar "lags" (atrasos temporais) dessas variáveis, já que o impacto do clima ou do dólar de hoje não altera o preço do arroz instantaneamente, mas sim semanas depois.
+
+Veja como você prepararia esse DataFrame no Pandas:
+
+'''
+import pandas as pd
+
+# Supondo que você coletou dados diários ou semanais de fontes como CEPEA, BCB e INMET
+df = pd.read_csv("dados_arroz.csv", parse_dates=['data'], index_index='data')
+
+# 1. Definindo a variável alvo
+df['preco_arroz'] = df['indicador_cepea']
+
+# 2. Criando Lags das variáveis preditoras (O dólar de 7 e 30 dias atrás influencia hoje)
+df['dolar_lag_7'] = df['dolar'].shift(7)
+df['dolar_lag_30'] = df['dolar'].shift(30)
+
+# 3. Criando médias móveis para suavizar o ruído do clima
+df['chuva_media_30d'] = df['precipitacao_RS'].rolling(window=30).mean()
+
+# 4. Variáveis de calendário (Sazonalidade de Safra vs Entresafra)
+# O preço do arroz costuma cair na época de colheita (março a maio) por excesso de oferta
+df['mes'] = df.index.month
+df['epoca_colheita'] = df['mes'].isin([3, 4, 5]).astype(int)
+
+# Remover os valores nulos gerados pelos 'shifts'
+df_treino = df.dropna()
+'''
+
+### Qual modelo escolher para esse cenário?
+- Se você quer focar em variáveis externas (Clima + Dólar): Use XGBoost, LightGBM ou a biblioteca Skforecast. Eles lidam muito bem com relacionamentos não-lineares (ex: se a chuva passar de um limite X, o preço sobe Y devido à inundação).
+
+- Se você quer focar na tendência de mercado puro com impactos pontuais: Use o SARIMAX do statsmodels, onde as variáveis econômicas entram como variáveis exógenas (exog).
+
+- Dica para o Dashboard no Streamlit
+Como o objetivo é a venda do arroz, crie um simulador no Streamlit onde o usuário possa alterar cenários fictícios. Exemplo: "E se o dólar subir para R$ 5,80 no próximo mês, o que acontece com a curva de preço?".
+
+Você pode usar os sliders do Streamlit para colher essas hipóteses do usuário, aplicá-las ao modelo mutivariado e plotar o impacto simulado na tela.
 
