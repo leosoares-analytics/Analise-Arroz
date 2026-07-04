@@ -138,22 +138,22 @@ import pandas as pd
 # Supondo que você coletou dados diários ou semanais de fontes como CEPEA, BCB e INMET
 df = pd.read_csv("dados_arroz.csv", parse_dates=['data'], index_index='data')
 
-# 1. Definindo a variável alvo
+1. Definindo a variável alvo
 df['preco_arroz'] = df['indicador_cepea']
 
-# 2. Criando Lags das variáveis preditoras (O dólar de 7 e 30 dias atrás influencia hoje)
+2. Criando Lags das variáveis preditoras (O dólar de 7 e 30 dias atrás influencia hoje)
 df['dolar_lag_7'] = df['dolar'].shift(7)
 df['dolar_lag_30'] = df['dolar'].shift(30)
 
-# 3. Criando médias móveis para suavizar o ruído do clima
+3. Criando médias móveis para suavizar o ruído do clima
 df['chuva_media_30d'] = df['precipitacao_RS'].rolling(window=30).mean()
 
-# 4. Variáveis de calendário (Sazonalidade de Safra vs Entresafra)
-# O preço do arroz costuma cair na época de colheita (março a maio) por excesso de oferta
+4. Variáveis de calendário (Sazonalidade de Safra vs Entresafra)
+O preço do arroz costuma cair na época de colheita (março a maio) por excesso de oferta
 df['mes'] = df.index.month
 df['epoca_colheita'] = df['mes'].isin([3, 4, 5]).astype(int)
 
-# Remover os valores nulos gerados pelos 'shifts'
+Remover os valores nulos gerados pelos 'shifts'
 df_treino = df.dropna()
 '''
 
