@@ -133,6 +133,7 @@ Para alimentar modelos mais avançados que o Prophet tradicional (como o SARIMAX
 Veja como você prepararia esse DataFrame no Pandas:
 
 ```
+
 import pandas as pd
 
 Supondo que você coletou dados diários ou semanais de fontes como CEPEA, BCB e INMET
@@ -155,6 +156,7 @@ df['epoca_colheita'] = df['mes'].isin([3, 4, 5]).astype(int)
 
 Remover os valores nulos gerados pelos 'shifts'
 df_treino = df.dropna()
+
 ```
 
 ### Qual modelo escolher para esse cenário?
