@@ -13,11 +13,12 @@ Extração de dados relevantes via Python.
 - [x] Conexão API CEPEA --> Arquivo via Excel
 - [x] Dados Cooperativa
 - [ ] NewsAPI (primerio só rodar e depois refinar)
-- [ ] Awesome API --> ainda falta valores historicos do dolar
+- [x] BCB Olinda (Dolar)
 - [ ] API Conab --> estoque de passagem e intenção de plantio
 - [ ] Custos de insumo
 - [ ] CBOT
-- [ ] Inflação --> IPCA e IGP-M
+- [x] Inflação --> IPCA e IGP-M
+- [ ] Diesel
 
 ### Load
 Criação de tabelas Raw via DuckDB.
