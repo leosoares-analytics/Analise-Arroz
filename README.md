@@ -14,7 +14,7 @@ Extração de dados relevantes via Python.
 - [x] Dados Cooperativa
 - [ ] NewsAPI (primerio só rodar e depois refinar)
 - [x] BCB Olinda (Dolar)
-- [ ] API Conab --> estoque de passagem e intenção de plantio
+- [x] API Conab
 - [ ] Custos de insumo
 - [ ] CBOT
 - [x] Inflação --> IPCA e IGP-M
@@ -110,21 +110,28 @@ streamlit run dashboard.py
 Dados do valor historico do arroz em casca
 
 > [!IMPORTANT]
-> Esse caso não é uma API, mas sim um arquivo Excel que deve ser baixado e atualizado pelo site https://www.cepea.org.br/br/indicador/arroz.aspx clicando em serie ded preços.
+> Esse caso não é uma API, mas sim um arquivo Excel que deve ser baixado e atualizado pelo site https://www.cepea.org.br/br/indicador/arroz.aspx clicando em serie de preços.
 > O arquivo deve ser salvo mudando o tipo de arquivo de .XLS para .XLSX
 
-### API Yahoo Finance
+### BCB
 
-Dados Coletados
-'''
-- USD/BRL : razão dolar / real
-- ZR=F : representa os contratos futuros de Rough Rice negociados na CBOT/CME.
-- DBA : exposição a futuros agrícolas como milho, soja, trigo, açúcar, café, algodão e pecuária.
-- MOO : investe em empresas ligadas ao agronegócio, como fertilizantes, sementes, máquinas agrícolas e processamento agrícola.
-'''
-## Pipeline de dados
+Valor do Dolar
 
-<img width="1408" height="768" alt="Image" src="https://github.com/user-attachments/assets/3e545abf-5a25-48c3-a071-7143b7d114a5" />
+### Conab
+
+> [!IMPORTANT]
+> Esse caso não é uma API, mas sim um arquivo Excel que deve ser baixado e atualizado pelo site https://portaldeinformacoes.conab.gov.br/download-arquivos.html
+> O arquivo deve ser salvo mudando o tipo de arquivo de .XLS para .XLSX
+
+#### Arquivos Conab
+  - Series historicas grãos
+  - Estimativa grãos
+  - Oferta e demanda
+  - Custo de produção
+  - Preço agropecuaria mensal municipio
+  - Preço agropecuaria mensal uf
+  - Estoquue publicos
+  - Frete
 
 
 ## Forecasting
