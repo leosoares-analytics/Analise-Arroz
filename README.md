@@ -5,43 +5,43 @@
 ### Configuração básica
 
 - [x] Criar ambiente para este projeto
-- [ ] Pesquisar na IA quais KPIs e analises estatisticas posso incluir para ajudar na tomada de decisão e quais dados/informações são relevantes para analise do preço do arroz
 
-### Ingestão
+### Extração
 
-- [x] Definir Stacks para o pipeline
+Extração de dados relevantes via Python.
+
 - [x] Conexão API CEPEA --> Arquivo via Excel
-- [x] DDados coperativa
-- [ ] NewsAPI para filtrar as noticias mais relevantes dos ultimos 30 dias em relação ao preço do arroz
-- [ ] Corrigir Awesome API para puxar valores historicos
+- [x] Dados Cooperativa
+- [ ] NewsAPI (primerio só rodar e depois refinar)
+- [ ] Awesome API --> ainda falta valores historicos do dolar
+- [ ] API Conab --> estoque de passagem e intenção de plantio
+- [ ] Custos de insumo
+- [ ] CBOT
+- [ ] Inflação --> IPCA e IGP-M
 
-### Vizualisação de dados
+### Load
+Criação de tabelas Raw via DuckDB.
 
-- [x] Graficos de historico e sazonalidade do preço do arroz
-- [x] Gap entre valor de mercado e coperativa
-- [ ] Noticias de contexto
-- [x] KPIs relevantes
-- [x] Preço do dia
-- [x] Média do valor do arroz
+- [x] Criação da tabela Raw CEPEA
+- [x] Criação da tabela Raw Cooperativa
+- [x] Criação da tabela Raw Awesome API
+- [ ] Criação da tabela Raw NewsAPI
+- [ ] Criação da tabela Raw Conab
+- [ ] Criação da tabela Raw Cusos Insumo
+- [ ] Criação da tabela Raw CBOT
+- [ ] Criação dda tabela Raw Inflação
 
-### Forecasting
+### Tranform
+Etapa de data quality, beneficiamento dos dados, criação das camadas stagging e mart.
 
-#### Ingestão de dados Forecasting
+- [ ] dbt Quality
+- [ ] Forecasting
 
-- [x] Indicador CEPEA/ESALQ (Arroz em Casca)
-- [ ] Estoque de Passagem e Intenção de Plantio (CONAB)
-- [ ] Custos de Produção (Insumos)
-- [ ] Taxa de Câmbio (USD/BRL) --> Awesome API
-- [ ] Preço do Arroz na Bolsa de Chicago (CBOT)
-- [ ] Inflação (IPCA / IGP-M)
-- [ ] Anomalias de Temperatura e Precipitação (Chuvas)
-- [ ] Eventos Climáticos Globais (El Niño / La Niña) (como o ONI - Ocean Niño Index)
 
 ## Escopo da analise
 
 Dashboard simples que auxilie na visão macro (Valor do arroz, valor do dolar e diversos outras variaveis que impactam) para tomada de decisão do melhor momento para venda do arroz.
 
-## Criação do Ambiente
 
 1 - Abra o cmd
 
