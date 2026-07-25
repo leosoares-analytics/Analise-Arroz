@@ -1,48 +1,26 @@
 # Analise-Arroz
 
-## To-do List
-
-### Configuração básica
-
-- [x] Criar ambiente para este projeto
-
-### Extração
-
-Extração de dados relevantes via Python.
-
-- [x] Conexão API CEPEA --> Arquivo via Excel
-- [x] Dados Cooperativa
-- [ ] NewsAPI (primerio só rodar e depois refinar)
-- [x] BCB Olinda (Dolar)
-- [x] API Conab
-- [ ] Custos de insumo
-- [ ] CBOT
-- [x] Inflação --> IPCA e IGP-M
-- [ ] Diesel
-
-### Load
-Criação de tabelas Raw via DuckDB.
-
-- [x] Criação da tabela Raw CEPEA
-- [x] Criação da tabela Raw Cooperativa
-- [x] Criação da tabela Raw Awesome API
-- [ ] Criação da tabela Raw NewsAPI
-- [ ] Criação da tabela Raw Conab
-- [ ] Criação da tabela Raw Cusos Insumo
-- [ ] Criação da tabela Raw CBOT
-- [ ] Criação dda tabela Raw Inflação
-
-### Tranform
-Etapa de data quality, beneficiamento dos dados, criação das camadas stagging e mart.
-
-- [ ] dbt Quality
-- [ ] Forecasting
-
-
 ## Escopo da analise
 
 Dashboard simples que auxilie na visão macro (Valor do arroz, valor do dolar e diversos outras variaveis que impactam) para tomada de decisão do melhor momento para venda do arroz.
 
+## Metodologia 
+
+O projeto foi estruturadod com base no Scrum e Kanban por meio do software Jira.
+
+Resumo do projeto
+
+<img width="1562" height="890" alt="Image" src="https://github.com/user-attachments/assets/980f79f2-b6f4-4967-a34a-1d15cc7e431d" />
+
+Kanban
+
+<img width="1567" height="890" alt="Image" src="https://github.com/user-attachments/assets/573e3401-04c5-409c-ab81-47d370501b00" />
+
+Backlog
+
+<img width="1570" height="890" alt="Image" src="https://github.com/user-attachments/assets/6f29d5a8-3752-46f8-80c4-90607707a31b" />
+
+## Como rodar o dadshboard
 
 1 - Abra o cmd
 
@@ -133,47 +111,5 @@ Valor do Dolar
   - Estoquue publicos
   - Frete
 
-
-## Forecasting
-
-Para alimentar modelos mais avançados que o Prophet tradicional (como o SARIMAX, XGBoost ou o Skforecast), você precisará criar "lags" (atrasos temporais) dessas variáveis, já que o impacto do clima ou do dólar de hoje não altera o preço do arroz instantaneamente, mas sim semanas depois.
-
-Veja como você prepararia esse DataFrame no Pandas:
-
-```
-
-import pandas as pd
-
-Supondo que você coletou dados diários ou semanais de fontes como CEPEA, BCB e INMET
-df = pd.read_csv("dados_arroz.csv", parse_dates=['data'], index_index='data')
-
-1. Definindo a variável alvo
-df['preco_arroz'] = df['indicador_cepea']
-
-2. Criando Lags das variáveis preditoras (O dólar de 7 e 30 dias atrás influencia hoje)
-df['dolar_lag_7'] = df['dolar'].shift(7)
-df['dolar_lag_30'] = df['dolar'].shift(30)
-
-3. Criando médias móveis para suavizar o ruído do clima
-df['chuva_media_30d'] = df['precipitacao_RS'].rolling(window=30).mean()
-
-4. Variáveis de calendário (Sazonalidade de Safra vs Entresafra)
-O preço do arroz costuma cair na época de colheita (março a maio) por excesso de oferta
-df['mes'] = df.index.month
-df['epoca_colheita'] = df['mes'].isin([3, 4, 5]).astype(int)
-
-Remover os valores nulos gerados pelos 'shifts'
-df_treino = df.dropna()
-
-```
-
-### Qual modelo escolher para esse cenário?
-- Se você quer focar em variáveis externas (Clima + Dólar): Use XGBoost, LightGBM ou a biblioteca Skforecast. Eles lidam muito bem com relacionamentos não-lineares (ex: se a chuva passar de um limite X, o preço sobe Y devido à inundação).
-
-- Se você quer focar na tendência de mercado puro com impactos pontuais: Use o SARIMAX do statsmodels, onde as variáveis econômicas entram como variáveis exógenas (exog).
-
-- Dica para o Dashboard no Streamlit
-Como o objetivo é a venda do arroz, crie um simulador no Streamlit onde o usuário possa alterar cenários fictícios. Exemplo: "E se o dólar subir para R$ 5,80 no próximo mês, o que acontece com a curva de preço?".
-
-Você pode usar os sliders do Streamlit para colher essas hipóteses do usuário, aplicá-las ao modelo mutivariado e plotar o impacto simulado na tela.
+## Dashboard
 
