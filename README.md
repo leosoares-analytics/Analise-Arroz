@@ -6,7 +6,7 @@ Dashboard simples que auxilie na visão macro (Valor do arroz, valor do dolar e 
 
 ## Metodologia 
 
-O projeto foi estruturadod com base no Scrum e Kanban por meio do software Jira.
+O projeto foi estruturado com base no Scrum e Kanban por meio do software Jira.
 
 Resumo do projeto
 
@@ -20,66 +20,6 @@ Backlog
 
 <img width="1570" height="890" alt="Image" src="https://github.com/user-attachments/assets/6f29d5a8-3752-46f8-80c4-90607707a31b" />
 
-## Como rodar o dadshboard
-
-1 - Abra o cmd
-
-```
-mkdir dados_arroz
-cd dados_arroz
-python -m venv venv
-```
-
-2 - Instalar Bibliotecas
-
-```
-pip install dbt-duckdb
-```
-
-3 - Incializar o projeto
-
-```
-cd dados_arroz
-dbt init dbt_case_arroz --skip-profile-setup
-```
-
-4 - Como abrir a pasta .dbt para ver o profile.yml ??
-
-```
-cd dbt_case_arroz
-New-Item profiles.yml
-```
-
-```
-cd models
-New-Item stg_preco_arroz.sql
-New-Item schema.yml
-```
-
-```
-cd ..
-dbt run --profiles-dir .
-```
-
-```
-dbt test --profiles-dir .
-```
-
-## Como rodar dbt após tudo feito
-
-```
-dbt clean
-dbt run --profiles-dir .
-dbt test --profiles-dir .
-```
-
-## Rodando o dashboard
-
-Via terminal abra a pasta ondde está o arquivo dashboard.py
-
-```
-streamlit run dashboard.py
-```
 
 ## Fontes de dados
 
@@ -94,6 +34,7 @@ Dados do valor historico do arroz em casca
 ### BCB
 
 Valor do Dolar
+Valor do Diesel
 
 ### Conab
 
@@ -110,6 +51,10 @@ Valor do Dolar
   - Preço agropecuaria mensal uf
   - Estoquue publicos
   - Frete
+
+### Yahoo Finance (CBOT Arroz)
+
+### IPEA (Inflação)
 
 ## Dashboard
 
