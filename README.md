@@ -23,38 +23,17 @@ Backlog
 
 ## Fontes de dados
 
-### CEPEA
-
-Dados do valor historico do arroz em casca
+<img width="1408" height="768" alt="Image" src="https://github.com/user-attachments/assets/19a93ac2-72f6-4953-a080-7ca8f618f851" />
 
 > [!IMPORTANT]
 > Esse caso não é uma API, mas sim um arquivo Excel que deve ser baixado e atualizado pelo site https://www.cepea.org.br/br/indicador/arroz.aspx clicando em serie de preços.
 > O arquivo deve ser salvo mudando o tipo de arquivo de .XLS para .XLSX
-
-### BCB
-
-Valor do Dolar
-Valor do Diesel
 
 ### Conab
 
 > [!IMPORTANT]
 > Esse caso não é uma API, mas sim um arquivo Excel que deve ser baixado e atualizado pelo site https://portaldeinformacoes.conab.gov.br/download-arquivos.html
 > O arquivo deve ser salvo mudando o tipo de arquivo de .XLS para .XLSX
-
-#### Arquivos Conab
-  - Series historicas grãos
-  - Estimativa grãos
-  - Oferta e demanda
-  - Custo de produção
-  - Preço agropecuaria mensal municipio
-  - Preço agropecuaria mensal uf
-  - Estoquue publicos
-  - Frete
-
-### Yahoo Finance (CBOT Arroz)
-
-### IPEA (Inflação)
 
 ## Dashboard
 
